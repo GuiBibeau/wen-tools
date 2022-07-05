@@ -1,0 +1,4 @@
+/* Tailwind's base directive to later be picked up in the build phase */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -1,0 +1,21 @@
+{
+  "name": "wen-metamask",
+  "version": "1.0.0",
+  "description": "A minimalist UI library to connect easily to metamask",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "start": "turbo run start",
+    "lint": "turbo run lint"
+  },
+  "devDependencies": {
+    "turbo": "^1.3.1"
+  }
+}

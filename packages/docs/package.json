@@ -1,0 +1,38 @@
+{
+  "name": "@wen/docs",
+  "version": "0.0.4",
+  "description": "A collection of react components.",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "package.json",
+    "README.md"
+  ],
+  "private": false,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "rollup",
+    "metamask"
+  ],
+  "author": "Gui Bibeau <g.bibeaulaviolette@gmail.com> (https://www.web3-fullstack.com/)",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "18.0.14",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "@wen/react": "^1.0.0",
+    "next": "^12.2.0",
+    "nextra": "^1.1.0",
+    "nextra-theme-docs": "^1.2.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
