@@ -1,6 +1,7 @@
 export default {
-  projectLink: "https://github.com/shuding/nextra", // GitHub link in the navbar
-  docsRepositoryBase: "https://github.com/shuding/nextra/blob/master", // base URL for the docs repository
+  projectLink: "https://github.com/GuiBibeau/wen-tools", // GitHub link in the navbar
+  docsRepositoryBase:
+    "https://github.com/GuiBibeau/wen-tools/tree/main/packages/docs", // base URL for the docs repository
   titleSuffix: " – Nextra",
   nextLinks: true,
   prevLinks: true,
