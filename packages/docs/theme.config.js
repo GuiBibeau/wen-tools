@@ -1,8 +1,9 @@
 export default {
   projectLink: "https://github.com/GuiBibeau/wen-tools", // GitHub link in the navbar
+  github: "https://github.com/GuiBibeau/wen-tools",
   docsRepositoryBase:
     "https://github.com/GuiBibeau/wen-tools/tree/main/packages/docs", // base URL for the docs repository
-  titleSuffix: " – Nextra",
+  titleSuffix: " – Wen",
   nextLinks: true,
   prevLinks: true,
   search: true,
