@@ -74,6 +74,13 @@ export const useWenState = () =>
     }
   );
 
+export const useAddress = () =>
+  useSyncExternalStore(
+    subscribeStore,
+    () => wallet.address,
+    () => wallet.address
+  );
+
 export const useWallet = () => useSnapshot(wallet);
 
 export const setAddress = (address: string | null) => {
@@ -86,4 +93,8 @@ export const setChainId = (chainId: string | null) => {
 
 export const setBalance = (balance: string | null) => {
   wallet.balance = balance;
+};
+
+export const setState = (state: State) => {
+  wallet.state = state;
 };

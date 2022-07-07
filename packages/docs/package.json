@@ -28,11 +28,11 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
-    "@wen/react": "^1.0.0",
     "next": "^12.2.0",
-    "nextra": "^1.1.0",
-    "nextra-theme-docs": "^1.2.6",
+    "nextra": "2.0.0-beta.5",
+    "nextra-theme-docs": "2.0.0-beta.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "wen-react": "^1.0.1"
   }
 }

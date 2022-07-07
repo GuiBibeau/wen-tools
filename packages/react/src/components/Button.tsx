@@ -1,6 +1,6 @@
-import React, { type FC } from "react";
+import React, { useEffect, useState, type FC } from "react";
 import { getShortenedAddress } from "../helpers";
-import { useWallet, useWenState } from "../store";
+import { useAddress, useWallet, useWenState } from "../store";
 
 type Props = {
   onClick: VoidFunction;
@@ -8,16 +8,21 @@ type Props = {
 
 export const Button: FC<Props> = ({ onClick }) => {
   const { address } = useWallet();
-  const state = useWenState();
-  const label = address ? getShortenedAddress(address) : "Connect Wallet";
+  const [label, setLabel] = useState<string | null>(null);
 
-  if (state === "detecting" || state === "server-side") {
+  useEffect(() => {
+    setTimeout(() => {
+      setLabel(address ? getShortenedAddress(address) : "Connect Wallet");
+    }, 300);
+  }, [address]);
+
+  if (!label) {
     return (
-      <div className="w-44 h-12 border-2 rounded-full g-metamask-blue-100 bg-metamask-blue-100 hover:bg-metamask-blue-200">
+      <button className="items-center w-44 h-12 flex justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-metamask-blue-100 hover:bg-metamask-blue-200">
         <div className="flex animate-pulse flex-row items-center h-full justify-center space-x-5">
           <div className="w-24 bg-gray-300 h-4 rounded-md " />
         </div>
-      </div>
+      </button>
     );
   }
 

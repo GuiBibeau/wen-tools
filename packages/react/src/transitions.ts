@@ -4,6 +4,7 @@ import {
   setAddress,
   setBalance,
   setChainId,
+  setState,
   State,
   wallet,
 } from "./store";
@@ -87,18 +88,17 @@ export const transitions: Record<
     return;
   },
   detectedMetamask: async (action) => {
+    console.log(action);
     if (!validateTransition(action)) {
       throw new Error(
         `Invalid state transition between ${action.entryState} and ${action.exitState}`
       );
     }
-    // wallet.state = action.exitState;
-    // push();
 
     const storedWallet = localStorage.getItem("wen-metamask");
-    if (storedWallet) {
-      const parsedWallet = JSON.parse(storedWallet);
+    const parsedWallet = storedWallet ? JSON.parse(storedWallet) : null;
 
+    if (parsedWallet && parsedWallet.address) {
       wallet.address = parsedWallet.address;
 
       const chainId = await window.ethereum?.request({ method: "eth_chainId" });
@@ -119,52 +119,54 @@ export const transitions: Record<
           exitState,
         });
       }, 500);
-
-      if (typeof window.ethereum !== "undefined") {
-        window.ethereum.on("accountsChanged", async (accounts: string[]) => {
-          if (accounts.length === 0) {
-            wallet.address = null;
-            wallet.balance = null;
-            wallet.chainId = null;
-            wallet.state = "not-connected";
-            return;
-          }
-
-          wallet.address = accounts[0];
-          const balance = await window.ethereum?.request({
-            method: "eth_getBalance",
-            params: [wallet.address, "latest"],
-          });
-          const chainId = await window.ethereum?.request({
-            method: "eth_chainId",
-          });
-
-          wallet.balance = balance;
-          wallet.chainId = chainId;
-        });
-
-        window.ethereum.on("chainChanged", (chainId: string) => {
-          console.log("chain changed", chainId);
-          wallet.chainId = chainId;
-          if (chainId !== wallet.desiredChainId) {
-            transitions.detectWrongNetwork({
-              entryState: "ready-for-dapp",
-              exitState: "wrong-network",
-            });
-          }
-          if (chainId === wallet.desiredChainId) {
-            transitions.detectRightNetwork({
-              entryState: "changing-network",
-              exitState: "ready-for-dapp",
-            });
-          }
-        });
-      }
-
-      return;
+    } else {
+      console.log(wallet.state);
+      wallet.state = action.exitState;
+      // push();
     }
 
-    console.log(storedWallet);
+    if (typeof window.ethereum !== "undefined") {
+      window.ethereum.on("accountsChanged", async (accounts: string[]) => {
+        console.log("hello");
+        if (accounts.length === 0) {
+          wallet.address = null;
+          wallet.balance = null;
+          wallet.chainId = null;
+          wallet.state = "not-connected";
+          push();
+          return;
+        }
+
+        wallet.address = accounts[0];
+        const balance = await window.ethereum?.request({
+          method: "eth_getBalance",
+          params: [wallet.address, "latest"],
+        });
+        const chainId = await window.ethereum?.request({
+          method: "eth_chainId",
+        });
+
+        wallet.balance = balance;
+        wallet.chainId = chainId;
+      });
+
+      window.ethereum.on("chainChanged", (chainId: string) => {
+        console.log("chain changed", chainId);
+        wallet.chainId = chainId;
+        if (chainId !== wallet.desiredChainId) {
+          transitions.detectWrongNetwork({
+            entryState: "ready-for-dapp",
+            exitState: "wrong-network",
+          });
+        }
+        if (chainId === wallet.desiredChainId) {
+          transitions.detectRightNetwork({
+            entryState: "changing-network",
+            exitState: "ready-for-dapp",
+          });
+        }
+      });
+    }
   },
   detectedMetamaskAndUser: (action) => {
     if (!validateTransition(action)) {
@@ -172,7 +174,6 @@ export const transitions: Record<
         `Invalid state transition between ${action.entryState} and ${action.exitState}`
       );
     }
-    console.log(action.exitState);
     /* Setting the state and pushing it to the store. */
     wallet.state = action.exitState;
     push();

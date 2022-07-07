@@ -14,6 +14,7 @@ export default [
       {
         file: packageJson.module,
         format: "esm",
+        sourcemap: true,
       },
     ],
     plugins: [
