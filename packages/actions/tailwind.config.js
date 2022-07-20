@@ -4,11 +4,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "gray-001": "#EEEEEE",
-        "gray-002": "#DDDDDD",
-        "gray-003": "#CCCCCC",
-        "gray-004": "#BBBBBB",
-        "gray-005": "#333333",
+        "metamask-blue-100": "#037DD6",
+        "metamask-blue-200": "rgb(21, 101, 192)",
+        "metamask-grey": "#3D3D3D",
       },
     },
     keyframes: {
@@ -23,7 +21,7 @@ module.exports = {
     },
     animation: {
       "slide-from-right": "slide-from-right 250ms linear",
-      spinner: "spinner 4s linear infinite",
+      spinner: "spinner 2s linear infinite",
     },
   },
   plugins: [],

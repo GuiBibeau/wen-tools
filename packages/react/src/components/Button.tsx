@@ -1,37 +1,50 @@
-import React, { useEffect, useState, type FC } from "react";
+import React, { useEffect } from "react";
 import { getShortenedAddress } from "../helpers";
-import { useAddress, useWallet, useWenState } from "../store";
+import { open } from "../state";
 
-type Props = {
-  onClick: VoidFunction;
+import { useWen } from "wen-actions";
+
+import "../style.css";
+import { useDesiredChainId } from "./ButtonProvider";
+
+const Skeleton = () => {
+  return (
+    <button
+      type="button"
+      onClick={open}
+      className="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+    >
+      <div className="w-32 bg-gray-300 h-6 rounded-md " />
+    </button>
+  );
 };
 
-export const Button: FC<Props> = ({ onClick }) => {
-  const { address } = useWallet();
-  const [label, setLabel] = useState<string | null>(null);
+export const Button = () => {
+  const [loading, setLoading] = React.useState(true);
+  const { metamaskPresent, address, chainId } = useWen();
+  const desiredChainId = useDesiredChainId();
+
+  const wrongNetwork = `0x${desiredChainId.toString(16)}` !== chainId;
 
   useEffect(() => {
-    setTimeout(() => {
-      setLabel(address ? getShortenedAddress(address) : "Connect Wallet");
-    }, 300);
-  }, [address]);
+    setTimeout(() => setLoading(false), 600);
+  }, [metamaskPresent]);
 
-  if (!label) {
-    return (
-      <button className="items-center w-44 h-12 flex justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-metamask-blue-100 hover:bg-metamask-blue-200">
-        <div className="flex animate-pulse flex-row items-center h-full justify-center space-x-5">
-          <div className="w-24 bg-gray-300 h-4 rounded-md " />
-        </div>
-      </button>
-    );
+  if (loading) {
+    return <Skeleton />;
   }
 
   return (
     <button
-      onClick={onClick}
-      className="items-center w-44 h-12 flex justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-metamask-blue-100 hover:bg-metamask-blue-200"
+      type="button"
+      onClick={open}
+      className="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
     >
-      {label}
+      <div className="w-32 h-6">
+        {!address && "Connect"}
+        {address && wrongNetwork && "Wrong Network"}
+        {address && !wrongNetwork && getShortenedAddress(address)}
+      </div>
     </button>
   );
 };

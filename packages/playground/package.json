@@ -1,21 +1,24 @@
 {
   "name": "playground",
-  "version": "0.1.0",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "next": "12.2.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "wen-metamask": "^1.0.1"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "wen-actions": "workspace:^1.0.0",
+    "wen-react": "workspace:^1.0.1"
   },
   "devDependencies": {
-    "eslint": "8.19.0",
-    "eslint-config-next": "12.2.0"
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.0.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.0.0"
   }
 }

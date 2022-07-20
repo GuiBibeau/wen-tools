@@ -38,3 +38,16 @@ export const hexaToEth = (hexString: string) => {
   const balance = BigInt(hexString);
   return Number(balance / BigInt("100000000000000")) / 10000;
 };
+
+/**
+ * If the window object exists, and the ethereum object exists, and the isMetaMask function exists,
+ * then return true.
+ * @returns A boolean value.
+ */
+export const detectMetamask = () => {
+  return (
+    typeof window !== "undefined" &&
+    typeof window.ethereum !== "undefined" &&
+    typeof window.ethereum.isMetaMask !== "undefined"
+  );
+};

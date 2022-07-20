@@ -1,7 +1,7 @@
 {
-  "name": "wen-react",
-  "version": "1.0.4",
-  "description": "A react compoenent to connect to metamask",
+  "name": "wen-actions",
+  "version": "1.0.0",
+  "description": "The engine behind all the wen tools",
   "module": "dist/esm/index.js",
   "types": "dist/esm/types/index.d.ts",
   "files": [
@@ -12,6 +12,7 @@
   "private": false,
   "scripts": {
     "prebuild": "rm -rf dist",
+    "test": "vitest",
     "dev": "rollup -c -w",
     "build": "npm run prebuild && rollup -c"
   },
@@ -30,6 +31,7 @@
     "@rollup/plugin-typescript": "^8.3.3",
     "@types/react": "18.0.14",
     "@types/rebass": "^4.0.10",
+    "@vitest/ui": "latest",
     "autoprefixer": "^10.4.4",
     "babel-loader": "^8.2.5",
     "next": "canary",
@@ -41,17 +43,15 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-terser": "^7.0.2",
-    "tailwindcss": "^3.1.4",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "vite": "^2.9.9",
+    "vitest": "latest"
   },
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@headlessui/react": "^1.6.6",
-    "@heroicons/react": "^1.0.6",
-    "valtio": "^1.6.1",
-    "wen-actions": "workspace:*"
+    "valtio": "^1.6.1"
   }
 }
