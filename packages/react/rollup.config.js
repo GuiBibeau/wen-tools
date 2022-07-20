@@ -1,5 +1,6 @@
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
+import path from "node:path"
 import typescript from "@rollup/plugin-typescript";
 import { terser } from "rollup-plugin-terser";
 import external from "rollup-plugin-peer-deps-external";
@@ -14,12 +15,15 @@ export default [
       {
         file: packageJson.module,
         format: "esm",
-        sourcemap: true,
+        sourceMap: true
       },
     ],
     plugins: [
       external(),
-      resolve(),
+      resolve({
+        rootDir: path.join(process.cwd(), '../..')
+      }
+      ),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
       postcss({
