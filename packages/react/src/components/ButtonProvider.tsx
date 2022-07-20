@@ -14,7 +14,10 @@ const ChainContext = React.createContext<Props>({
   chainDisplayName: "Ethereum",
 });
 
-export const ConnectButton = (props: Props) => {
+export const ConnectButton = ({
+  chainId = 1,
+  chainDisplayName = "Ethereum",
+}: Props) => {
   useEffect(() => {
     if (detectMetamask()) {
       listen();
@@ -24,7 +27,7 @@ export const ConnectButton = (props: Props) => {
     };
   }, []);
   return (
-    <ChainContext.Provider value={props}>
+    <ChainContext.Provider value={{ chainId, chainDisplayName }}>
       <Button />
       <Modal />
     </ChainContext.Provider>
