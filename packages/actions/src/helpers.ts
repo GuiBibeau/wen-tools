@@ -1,8 +1,8 @@
 export const isEthereumDefined = (): boolean => {
-  if (typeof window === "undefined") {
-    return false;
-  }
-  return window.ethereum !== undefined;
+	if (typeof window === "undefined") {
+		return false;
+	}
+	return window.ethereum !== undefined;
 };
 
 /**
@@ -11,5 +11,5 @@ export const isEthereumDefined = (): boolean => {
  * @returns A string that is the hexadecimal representation of the chainId.
  */
 export const toChainHexadecimal = (chainId: number): string => {
-  return `0x${chainId.toString(16)}`;
+	return `0x${chainId.toString(16)}`;
 };

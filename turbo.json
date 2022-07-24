@@ -7,12 +7,22 @@
       "outputs": [".next/**", "dist/**"]
     },
     "test": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["build"],
+      "inputs": ["src/**/*.tsx", "src/**/*.ts", "test/**/*.ts", "test/**/*.tsx"]
+    },
+    "format": {
+      "cache": false,
+      "outputs": []
+    },
+    "format:fix": {
+      "cache": false,
       "outputs": []
     },
     "lint": {
-      "outputs": []
+      "outputs": [],
+      "cache": false
     },
+
     "dev": {
       "cache": false
     },

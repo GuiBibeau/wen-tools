@@ -1,13 +1,13 @@
 import { proxy } from "valtio";
 
 export const state = proxy({
-  open: false,
+	open: false,
 });
 
 export const open = () => {
-  state.open = true;
+	state.open = true;
 };
 
 export const close = () => {
-  state.open = false;
+	state.open = false;
 };
