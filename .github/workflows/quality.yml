@@ -40,5 +40,5 @@ jobs:
       - name: Format
         run: pnpm format
 
-      - name: Lint:
+      - name: Lint
         run: pnpm lint
