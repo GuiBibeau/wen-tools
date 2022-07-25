@@ -1,6 +1,6 @@
 {
   "name": "wen-actions",
-  "version": "1.0.0",
+  "version": "1.0.9",
   "description": "The engine behind all the wen tools",
   "module": "dist/esm/index.js",
   "types": "dist/esm/types/index.d.ts",

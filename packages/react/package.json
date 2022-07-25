@@ -1,6 +1,6 @@
 {
   "name": "wen-react",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A react compoenent to connect to metamask",
   "module": "dist/esm/index.js",
   "types": "dist/esm/types/index.d.ts",
@@ -13,7 +13,7 @@
   "scripts": {
     "prebuild": "rm -rf dist",
     "dev": "rollup -c -w",
-    "build": "npm run prebuild && rollup -c",
+    "build": "npm run prebuild && rollup -c --silent",
     "format": "rome format ./src",
     "format:fix": "rome format --write ./src",
     "lint": "rome check ./src",
