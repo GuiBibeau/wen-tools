@@ -33,6 +33,12 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install    
-      - run: pnpm publish
+
+      - name: Publish Actions  
+        working-directory: packages/actions
+        run: pnpm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish React
+        working-directory: packages/react
+        run: pnpm publish
