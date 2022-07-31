@@ -2,9 +2,12 @@ import React from "react";
 import { LoadingPill, NotConnectedPill, ConnectedPill } from "../Pills";
 import { useWen, disconnect } from "wen-actions";
 import { getShortenedAddress } from "../../helpers";
+import { useTheme } from "../ButtonProvider";
 
 export const ModalHeader = () => {
 	const { requesting, connected, address } = useWen();
+	const theme = useTheme();
+
 	const handleClick = () => {
 		disconnect();
 	};
@@ -20,12 +23,12 @@ export const ModalHeader = () => {
 					</h1>
 					{address ? (
 						<>
-						<p className="mt-1 text-sm text-gray-500 truncate">
+						<p className="mt-1 text-sm text-gray-500 truncate mb-4">
 							Connected with {getShortenedAddress(address)}
 						</p>
 						<button
 							type="button"
-							className="inline-flex justify-center rounded-md px-4 py-2 mt-4 text-base font-medium  sm:text-sm border-gray-300 border"
+							className={theme.button}
 							onClick={handleClick}
 						>
 							Disconnect

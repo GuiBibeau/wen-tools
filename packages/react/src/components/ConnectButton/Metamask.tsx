@@ -3,9 +3,11 @@ import { connectWallet } from "wen-actions";
 import { detectMetamask } from "../../helpers";
 
 import { close } from "../../state";
+import { useTheme } from "../ButtonProvider";
 
 export const MetamaskButton = () => {
 	const [isMetamaskInstalled] = useState(detectMetamask());
+	const { connectPill } = useTheme();
 
 	const handleClick = async () => {
 		try {
@@ -18,7 +20,7 @@ export const MetamaskButton = () => {
 	};
 
 	return (
-		<li className="py-4">
+		<div className="py-4">
 			<div className="flex items-center space-x-4">
 				<div className="flex-shrink-0">
 					<img
@@ -38,23 +40,18 @@ export const MetamaskButton = () => {
 				</div>
 				<div>
 					{isMetamaskInstalled ? (
-						<button
-							onClick={handleClick}
-							className="inline-flex items-center shadow px-2.5 py-0.5 text-sm leading-5 font-medium rounded-full text-gray-700 bg-gray-50 hover:bg-gray-100"
-						>
-							Connect
-						</button>
+						<button onClick={handleClick} className={connectPill}>Connect</button>
 					) : (
 						<a
 							href="https://metamask.io/download/"
 							target="_blank"
-							className="inline-flex items-center shadow px-2.5 py-0.5 text-sm leading-5 font-medium rounded-full text-gray-700 bg-gray-50 hover:bg-gray-100"
+							className={connectPill}
 						>
 							Download
 						</a>
 					)}
 				</div>
 			</div>
-		</li>
+		</div>
 	);
 };
