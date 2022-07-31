@@ -5,16 +5,14 @@ import { open } from "../state";
 import { useWen } from "wen-actions";
 
 import "../style.css";
-import { useDesiredChainId } from "./ButtonProvider";
+import { useDesiredChainId, useTheme } from "./ButtonProvider";
 
 const Skeleton = () => {
+	const theme = useTheme();
+
 	return (
-		<button
-			type="button"
-			onClick={open}
-			className="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-		>
-			<div className="w-32 bg-gray-300 h-6 rounded-md " />
+		<button type="button" onClick={open} className={theme.button}>
+			<div className="w-32 bg-gray-100 h-6 rounded-md " />
 		</button>
 	);
 };
@@ -22,6 +20,7 @@ const Skeleton = () => {
 export const Button = () => {
 	const [loading, setLoading] = React.useState(true);
 	const { metamaskPresent, address, chainId } = useWen();
+	const theme = useTheme();
 	const desiredChainId = useDesiredChainId();
 
 	const wrongNetwork = `0x${desiredChainId.toString(16)}` !== chainId;
@@ -35,11 +34,7 @@ export const Button = () => {
 	}
 
 	return (
-		<button
-			type="button"
-			onClick={open}
-			className="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-		>
+		<button type="button" onClick={open} className={theme.button}>
 			<div className="w-32 h-6">
 				{!address && "Connect"}
 				{address && wrongNetwork && "Wrong Network"}

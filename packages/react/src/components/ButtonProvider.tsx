@@ -3,21 +3,25 @@ import { Button } from "./Button";
 import { listen, stopListening } from "wen-actions";
 import { detectMetamask } from "../helpers";
 import Modal from "./Modal/Container";
+import { Theme, themeMap } from "./theme";
 
 type Props = {
 	chainId?: number;
 	chainDisplayName?: string;
+	theme?: Theme;
 };
 
 const ChainContext = React.createContext<Props>({
 	chainId: 1,
 	chainDisplayName: "Ethereum",
+	theme: "base",
 });
 
 export const ConnectButton = (
-	{ chainId = 1, chainDisplayName = "Ethereum" }: {
+	{ chainId = 1, chainDisplayName = "Ethereum", theme = "base" }: {
 		chainId?: number;
 		chainDisplayName?: string;
+		theme?: Theme;
 	},
 ) => {
 	useEffect(() => {
@@ -29,7 +33,7 @@ export const ConnectButton = (
 		};
 	}, []);
 	return (
-		<ChainContext.Provider value={{ chainId, chainDisplayName }}>
+		<ChainContext.Provider value={{ chainId, chainDisplayName, theme }}>
 			<Button />
 			<Modal />
 		</ChainContext.Provider>
@@ -50,4 +54,12 @@ export const useDesiredChainDisplayName = () => {
 		throw new Error("No chainDisplayName provided");
 	}
 	return chainDisplayName;
+};
+
+export const useTheme = () => {
+	const { theme } = React.useContext(ChainContext);
+	if (!theme) {
+		throw new Error("No theme provided");
+	}
+	return themeMap[theme];
 };
