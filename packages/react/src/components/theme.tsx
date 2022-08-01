@@ -1,15 +1,9 @@
-export type Theme = "base";
+export type ThemeComponentNames = "button" | "link" | "connectedPill" | "notConnectedPill" | "loadingPill" | "connectPill"
+export type ThemeComponents = Record<ThemeComponentNames, string>
 
-export type ThemeComponents = {
-	button: string;
-	link: string;
-	connectedPill: string;
-	notConnectedPill: string;
-	loadingPill: string;
-	connectPill: string;
-};
+const createThemeMap = <T extends {[name: string]: ThemeComponents}>(map: T): T => map;
 
-export const themeMap: Record<Theme, ThemeComponents> = {
+export const themeMap = createThemeMap({
 	base: {
 		button:
 			"inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 ",
@@ -23,4 +17,6 @@ export const themeMap: Record<Theme, ThemeComponents> = {
 		connectPill:
 			"inline-flex items-center shadow px-2.5 py-0.5 text-sm leading-5 font-medium rounded-full text-white bg-blue-600 hover:bg-blue-700",
 	},
-};
+});
+
+export type Theme = keyof typeof themeMap
