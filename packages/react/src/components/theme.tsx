@@ -1,13 +1,8 @@
-export interface ThemeComponents {
-	button: string;
-	link: string;
-	connectedPill: string;
-	notConnectedPill: string;
-	loadingPill: string;
-	connectPill: string;
-};
+export type ThemeComponentNames = "button" | "link" | "connectedPill" | "notConnectedPill" | "loadingPill" | "connectPill"
+export type ThemeComponents = Record<ThemeComponentNames, string>
 
 const createThemeMap = <T extends {[name: string]: ThemeComponents}>(map: T): T => map;
+
 export const themeMap = createThemeMap({
 	base: {
 		button:
