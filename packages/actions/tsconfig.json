@@ -13,6 +13,7 @@
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
     "declarationDir": "types",
-    "emitDeclarationOnly": true
+    "emitDeclarationOnly": true,
+    "composite": true
   }
 }
