@@ -30,7 +30,7 @@ export const ChangeNetwork = () => {
 				<div className="mt-2">
 					<p className="text-sm text-gray-500 mb-4">
 						Please connect to the {desiredChainDisplayName}
-						network to use this app.
+						{' '}network to use this app.
 					</p>
 					<button type="button" className={theme.button} onClick={handleClick}>
 						Switch network
