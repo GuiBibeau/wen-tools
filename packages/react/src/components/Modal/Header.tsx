@@ -6,39 +6,24 @@ import { useTheme } from "../ButtonProvider";
 
 export const ModalHeader = () => {
 	const { requesting, connected, address } = useWen();
-	const theme = useTheme();
+	const { button, header, text } = useTheme();
 
 	const handleClick = () => {
 		disconnect();
 	};
 	return (
 		<div className="pb-5 ">
-			<div className="sm:flex sm:justify-between sm:items-baseline">
+			<div className="flex justify-between items-baseline">
 				<div className="sm:w-0 sm:flex-1">
-					<h1
-						id="message-heading"
-						className="text-lg font-medium text-gray-900"
-					>
-						{window.location.hostname}
-					</h1>
+					<h1 id="message-heading" className={header}>{window.location.hostname}</h1>
 					{address ? (
 						<>
-						<p className="mt-1 text-sm text-gray-500 truncate mb-4">
-							Connected with {getShortenedAddress(address)}
-						</p>
-						<button
-							type="button"
-							className={theme.button}
-							onClick={handleClick}
-						>
+						<p className={text}>Connected with{getShortenedAddress(address)}</p>
+						<button type="button" className={button} onClick={handleClick}>
 							Disconnect
 						</button>
 						</>
-					) : (
-						<p className="mt-1 text-sm text-gray-500 truncate">
-							Connect your wallet to use this app.
-						</p>
-					)}
+					) : <p className={text}>Connect your wallet to use this app.</p>}
 				</div>
 				<div
 					className="mt-4 flex items-center justify-between sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:justify-start"
