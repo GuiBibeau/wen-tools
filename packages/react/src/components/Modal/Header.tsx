@@ -18,7 +18,8 @@ export const ModalHeader = () => {
 					<h1 id="message-heading" className={header}>{window.location.hostname}</h1>
 					{address ? (
 						<>
-						<p className={text}>Connected with{getShortenedAddress(address)}</p>
+						<p className={text}>Connected with
+							{` ${getShortenedAddress(address)}`}</p>
 						<button type="button" className={button} onClick={handleClick}>
 							Disconnect
 						</button>

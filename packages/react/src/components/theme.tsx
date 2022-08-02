@@ -15,7 +15,7 @@ const createThemeMap = <T extends { [name: string]: ThemeComponents }>(
 
 export const themeMap = createThemeMap({
 	base: {
-		header: "text-lg font-medium text-gray-900",
+		header: "text-2xl font-medium text-gray-900",
 		text: "mt-1 text-sm text-gray-500 truncate mb-4",
 		button:
 			"inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 ",
@@ -31,7 +31,7 @@ export const themeMap = createThemeMap({
 			"mx-auto max-w-2xl transform divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-5 transition-all p-8",
 	},
 	dark: {
-		header: "text-lg font-medium text-white",
+		header: "text-2xl font-medium text-white",
 		text: "mt-1 text-sm text-slate-200 truncate mb-4",
 		button:
 			"inline-flex items-center px-4 py-2 border text-sm font-medium rounded-md shadow-sm text-white bg-black hover:border-white border-slate-400 border ",
