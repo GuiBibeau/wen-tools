@@ -4,8 +4,11 @@ import { Dialog, Transition } from "@headlessui/react";
 import { useSnapshot } from "valtio";
 import { state, close } from "../../state";
 import { ModalContent } from "./Content";
+import { useTheme } from "../ButtonProvider";
+
 export const Modal = (): JSX.Element => {
 	const { open } = useSnapshot(state);
+	const { modal } = useTheme();
 
 	return (
 		<Transition.Root show={open} as={Fragment} appear={true}>
@@ -33,11 +36,7 @@ export const Modal = (): JSX.Element => {
 						leaveFrom="opacity-100 scale-100"
 						leaveTo="opacity-0 scale-95"
 					>
-						<Dialog.Panel
-							className="mx-auto max-w-2xl transform divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-5 transition-all p-8"
-						>
-							<ModalContent />
-						</Dialog.Panel>
+						<Dialog.Panel className={modal}><ModalContent /></Dialog.Panel>
 					</Transition.Child>
 				</div>
 			</Dialog>

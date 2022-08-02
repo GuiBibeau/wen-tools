@@ -16,7 +16,5 @@
     "emitDeclarationOnly": true,
     "composite": true
   },
-  "references": [
-    {"path": "../actions"}
-  ]
+  "references": [{ "path": "../actions" }]
 }

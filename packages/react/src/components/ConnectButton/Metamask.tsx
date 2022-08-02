@@ -7,7 +7,7 @@ import { useTheme } from "../ButtonProvider";
 
 export const MetamaskButton = () => {
 	const [isMetamaskInstalled] = useState(detectMetamask());
-	const { connectPill } = useTheme();
+	const { connectPill, text } = useTheme();
 
 	const handleClick = async () => {
 		try {
@@ -33,7 +33,7 @@ export const MetamaskButton = () => {
 					<a
 						target="_blank"
 						href="https://metamask.io/download/"
-						className="text-sm font-medium text-gray-900 truncate hover:border-black hover:border-b cursor-pointer pb-1 hover:border-dotted hover:after:content-['🔗'] hover:mr-2"
+						className={text}
 					>
 						Metamask
 					</a>
