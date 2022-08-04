@@ -44,7 +44,25 @@ export const themeMap = createThemeMap({
 			"inline-flex items-center px-3 py-0.5 border text-sm font-medium rounded shadow-sm text-white bg-black hover:border-white border-slate-400 border ",
 		notConnectedPill: "",
 		modal:
-			"mx-auto max-w-2xl transform divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-5 transition-all p-8 bg-black",
+			"mx-auto max-w-2xl transform divide-y divide-gray-100 overflow-hidden rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 transition-all p-8 bg-black",
+	},
+	w3fs: {
+		header:
+			"text-2xl font-medium bg-clip-text text-transparent Pastel bg-gradient-to-tr from-pink-500 to-orange-300",
+		text: "mt-1 text-sm text-slate-200 truncate mb-4",
+		button:
+			"inline-flex items-center px-4 py-2 border text-sm font-medium rounded-md shadow-sm text-white Pastel bg-gradient-to-tr from-pink-500 to-orange-300 border ",
+		connectedPill:
+			"inline-flex items-center px-3 py-0.5 rounded bg-clip-text text-transparent Pastel bg-gradient-to-tr from-pink-500 to-orange-300 border border-pink-200",
+		loadingPill:
+			"inline-flex items-center px-3 py-0.5 rounded text-sm bg-clip-text text-transparent Pastel bg-gradient-to-tr from-pink-500 to-orange-300 border border-pink-200",
+
+		connectPill:
+			"inline-flex items-center px-3 py-0.5 rounded text-sm font-medium rounded-md shadow-sm text-white Pastel bg-gradient-to-tr from-pink-500 to-orange-300 border",
+		notConnectedPill:
+			"inline-flex items-center px-3 py-0.5 rounded bg-clip-text text-transparent Pastel bg-gradient-to-tr from-pink-500 to-orange-300 border border-pink-200",
+		modal:
+			"mx-auto max-w-2xl transform divide-y divide-gray-100 overflow-hidden rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 transition-all p-8 bg-zinc-900",
 	},
 });
 
