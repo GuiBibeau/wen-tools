@@ -13,7 +13,7 @@ const Home: NextPage = () => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main className={styles.main}>
-				<ConnectButton theme="w3fs" />
+				<ConnectButton theme="elegant" />
 				{/* <ConnectButton theme="base" /> */}
 			</main>
 		</div>
