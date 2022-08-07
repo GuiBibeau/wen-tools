@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { Button } from "./Button";
-import { listen, stopListening } from "wen-actions";
-import { detectMetamask } from "../helpers";
+import { listen, stopListening } from "@wen/actions";
+import { detectMetamask, parseChainId, parseChainName } from "../helpers";
 import Modal from "./Modal/Container";
 import { Theme, themeMap } from "./theme";
 
 type Props = {
-	chainId?: number;
+	chainId?: number | string;
 	chainDisplayName?: string;
 	theme?: Theme;
 };
@@ -32,8 +32,13 @@ export const ConnectButton = (
 			stopListening();
 		};
 	}, []);
+	const chainContext = {
+		chainId: parseChainId(chainId),
+		chainDisplayName: parseChainName(chainId),
+		theme,
+	};
 	return (
-		<ChainContext.Provider value={{ chainId, chainDisplayName, theme }}>
+		<ChainContext.Provider value={chainContext}>
 			<Button />
 			<Modal />
 		</ChainContext.Provider>

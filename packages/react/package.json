@@ -1,5 +1,5 @@
 {
-  "name": "wen-react",
+  "name": "@wen/react",
   "version": "1.0.10",
   "description": "A react compoenent to connect to metamask",
   "module": "dist/esm/index.js",
@@ -57,6 +57,6 @@
     "@headlessui/react": "^1.6.6",
     "@heroicons/react": "^1.0.6",
     "valtio": "^1.6.1",
-    "wen-actions": "workspace:*"
+    "@wen/actions": "workspace:*"
   }
 }
