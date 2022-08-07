@@ -9,11 +9,11 @@ React component to connect your users quickly
 Wen React is a component that allows you to connect to wallets in 1 line of code in any React 18 app.
 
 ```sh
-npm i wen-actions wen-react
+npm i @wen/actions @wen/react
 # or
-yarn add wen-actions wen-react
+yarn add @wen/actions @wen/react
 # or
-pnpm i wen-actions wen-react
+pnpm i @wen/actions @wen/react
 ```
 
 ## Connect users
@@ -21,7 +21,7 @@ pnpm i wen-actions wen-react
 Just render the kit component. It includes everything to connect to a wallet and right network.
 
 ```jsx
-import { ConnectButton } from "wen-react";
+import { ConnectButton } from "@wen/react";
 
 export default function Home() {
   return (
@@ -37,7 +37,7 @@ export default function Home() {
 All chains are supported, you only need to pass in the chain id (find them [here](https://chainlist.org/)).
 
 ```jsx
-import { ConnectButton } from "wen-react";
+import { ConnectButton } from "@wen/react";
 
 export default function Home() {
   return (
@@ -50,4 +50,4 @@ export default function Home() {
 
 ## Reading wallet data
 
-[Wen-Actions](/packages/wen-actions)
+[@wen/actions](/packages/@wen/actions)
