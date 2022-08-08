@@ -4,4 +4,12 @@ const withNextra = require("nextra")({
   themeConfig: "./theme.config.js",
   // optional: add `unstable_staticImage: true` to enable Nextra's auto image import
 });
-module.exports = withNextra();
+module.exports = withNextra({
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
+  },
+});

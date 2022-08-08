@@ -3,7 +3,7 @@ import { ConnectButton } from "@wen-tools/react";
 import React from "react";
 
 export const PreviewTheme = () => {
-  const [theme, setTheme] = React.useState("dark");
+  const [theme, setTheme] = React.useState("base");
   return (
     <>
       <Select
