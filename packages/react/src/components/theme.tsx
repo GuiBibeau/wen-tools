@@ -64,6 +64,40 @@ export const themeMap = createThemeMap({
     modal:
       "mx-auto max-w-2xl transform divide-y divide-gray-100 overflow-hidden rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 transition-all p-8 bg-zinc-900",
   },
+  midnight: {
+    header: "text-2xl font-medium text-sky-100",
+    text: "mt-1 text-sm text-sky-500 truncate mb-4",
+    button:
+      "inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-sky-900 hover:bg-slate-800",
+    connectedPill:
+      "inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-sky-700 text-sky-100",
+    notConnectedPill:
+      "inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-sky-700 text-sky-100",
+    loadingPill:
+      "inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-sky-700 text-sky-100",
+
+    connectPill:
+      "inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-sky-700 text-sky-100",
+    modal:
+      "mx-auto max-w-2xl transform divide-y divide-sky-900 overflow-hidden rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 transition-all p-8 bg-slate-900",
+  },
+  elegant: {
+    header: "text-2xl font-medium text-zinc-100",
+    text: "mt-1 text-sm text-zinc-300 truncate mb-4",
+    button:
+      "inline-flex items-center px-4 py-2	 text-sm font-medium rounded-md shadow-sm text-zinc-900 Pastel bg-gradient-to-tr from-yellow-300 to-yellow-600 hover:bg-gradient-to-tr hover:from-yellow-200 hover:to-yellow-500",
+    connectedPill:
+      "inline-flex items-center px-3 py-0.5 rounded bg-clip-text text-transparent Pastel bg-gradient-to-tr bg-gradient-to-tr from-yellow-300 to-yellow-600 border border-yellow-600",
+    loadingPill:
+      "inline-flex items-center px-3 py-0.5 rounded text-sm bg-clip-text text-transparent Pastel bg-gradient-to-tr bg-gradient-to-tr from-yellow-300 to-yellow-600 border border-yellow-600",
+
+    connectPill:
+      "inline-flex items-center px-3 py-0.5 rounded text-sm font-medium rounded-md shadow-sm text-zinc-900 Pastel bg-gradient-to-tr bg-gradient-to-tr from-yellow-300 to-yellow-600",
+    notConnectedPill:
+      "inline-flex items-center px-3 py-0.5 rounded bg-clip-text text-yellow-600 Pastel bg-gradient-to-tr rom-yellow-300 to-yellow-600 border border-yellow-600",
+    modal:
+      "mx-auto max-w-2xl transform divide-y divide-yellow-100 overflow-hidden rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 transition-all p-8 bg-stone-800",
+  },
 });
 
 export type Theme = keyof typeof themeMap;
