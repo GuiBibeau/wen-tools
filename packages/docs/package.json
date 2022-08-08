@@ -30,8 +30,8 @@
   },
   "dependencies": {
     "@geist-ui/core": "^2.3.8",
-    "@wen-tools/actions": "workspace:1.10.0-beta.2",
-    "@wen-tools/react": "workspace:1.10.0-beta.6",
+    "@wen-tools/actions": "1.10.0-beta.2",
+    "@wen-tools/react": "1.10.0-beta.6",
     "next": "^12.2.0",
     "nextra": "2.0.0-beta.5",
     "nextra-theme-docs": "2.0.0-beta.5",
