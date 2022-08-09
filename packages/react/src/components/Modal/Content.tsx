@@ -1,5 +1,5 @@
 import React from "react";
-import { useWen } from "@wen/actions";
+import { useWen } from "@wen-tools/actions";
 import { useDesiredChainId } from "../ButtonProvider";
 import { ConnectModalBody } from "./Connect";
 import { ModalHeader } from "./Header";

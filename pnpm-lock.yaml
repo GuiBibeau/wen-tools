@@ -63,9 +63,11 @@ importers:
 
   packages/docs:
     specifiers:
+      '@geist-ui/core': ^2.3.8
       '@types/node': 18.0.6
       '@types/react': 18.0.14
-      '@wen/react': ^1.0.1
+      '@wen-tools/actions': 1.10.0-beta.2
+      '@wen-tools/react': 1.10.0-beta.6
       next: ^12.2.0
       nextra: 2.0.0-beta.5
       nextra-theme-docs: 2.0.0-beta.5
@@ -75,7 +77,9 @@ importers:
       react-dom: ^18.2.0
       typescript: ^4.7.4
     dependencies:
-      '@wen/react': link:../react
+      '@geist-ui/core': 2.3.8_biqbaboplfbrettd7655fr4n2y
+      '@wen-tools/actions': 1.10.0-beta.2_biqbaboplfbrettd7655fr4n2y
+      '@wen-tools/react': 1.10.0-beta.6_biqbaboplfbrettd7655fr4n2y
       next: 12.2.2_biqbaboplfbrettd7655fr4n2y
       nextra: 2.0.0-beta.5_react@18.2.0
       nextra-theme-docs: 2.0.0-beta.5_exwqpgtx3prcotsmrcjs6jn6ru
@@ -93,8 +97,7 @@ importers:
       '@types/node': 18.0.6
       '@types/react': 18.0.15
       '@types/react-dom': ^18.0.6
-      '@wen/actions': workspace:^1.0.0
-      '@wen/react': workspace:^1.0.1
+      '@wen-tools/react': workspace:1.10.0-beta.4
       eslint: 8.20.0
       eslint-config-next: 12.2.2
       next: 12.2.2
@@ -102,8 +105,7 @@ importers:
       react-dom: ^18.2.0
       typescript: 4.7.4
     dependencies:
-      '@wen/actions': link:../actions
-      '@wen/react': link:../react
+      '@wen-tools/react': link:../react
       next: 12.2.2_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -125,7 +127,7 @@ importers:
       '@rollup/plugin-typescript': ^8.3.3
       '@types/react': 18.0.14
       '@types/rebass': ^4.0.10
-      '@wen/actions': workspace:*
+      '@wen-tools/actions': workspace:1.10.0-beta.2
       autoprefixer: ^10.4.4
       babel-loader: ^8.2.5
       next: canary
@@ -144,7 +146,7 @@ importers:
     dependencies:
       '@headlessui/react': 1.6.6_biqbaboplfbrettd7655fr4n2y
       '@heroicons/react': 1.0.6_react@18.2.0
-      '@wen/actions': link:../actions
+      '@wen-tools/actions': link:../actions
       valtio: 1.6.3_react@18.2.0
     devDependencies:
       '@babel/core': 7.18.9
@@ -395,6 +397,17 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@geist-ui/core/2.3.8_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-OKwGgTA4+fBM41eQbqDoUj4XBycZbYH7Ynrn6LPO5yKX7zeWPu/R7HN3vB4/oHt34VTDQI5sDNb1SirHvNyB5w==}
+    peerDependencies:
+      react: '>=16.9.0'
+      react-dom: '>=16.9.0'
+    dependencies:
+      '@babel/runtime': 7.18.9
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
 
   /@headlessui/react/1.6.6_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-MFJtmj9Xh/hhBMhLccGbBoSk+sk61BlP6sJe4uQcVMtXZhCgGqd2GyIQzzmsdPdTEWGSF434CBi8mnhR6um46Q==}
@@ -1181,6 +1194,43 @@ packages:
     dependencies:
       sirv: 2.0.2
     dev: true
+
+  /@wen-tools/actions/1.10.0-beta.2_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-xv0k/yslxZ8y/baD7eDv4sU96RBy8roe51mVEML2sRGyJQZ5qxd28cw2U6HxqObaRdjwTfxwgJLhpgcrf7WBLg==}
+    peerDependencies:
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      valtio: 1.6.3_react@18.2.0
+    transitivePeerDependencies:
+      - '@babel/helper-module-imports'
+      - '@babel/types'
+      - aslemammad-vite-plugin-macro
+      - babel-plugin-macros
+      - vite
+    dev: false
+
+  /@wen-tools/react/1.10.0-beta.6_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-zczWvxTmWILR0k1+hFMuTiKYkkZDydW9Bge7sMYZQVky3wFJL556ufBZ8dX7jGXbBMcjjMWRUgGV4LiwbR5cjA==}
+    peerDependencies:
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      '@headlessui/react': 1.6.6_biqbaboplfbrettd7655fr4n2y
+      '@heroicons/react': 1.0.6_react@18.2.0
+      '@wen-tools/actions': 1.10.0-beta.2_biqbaboplfbrettd7655fr4n2y
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      valtio: 1.6.3_react@18.2.0
+    transitivePeerDependencies:
+      - '@babel/helper-module-imports'
+      - '@babel/types'
+      - aslemammad-vite-plugin-macro
+      - babel-plugin-macros
+      - vite
+    dev: false
 
   /acorn-jsx/5.3.2_acorn@8.7.1:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}

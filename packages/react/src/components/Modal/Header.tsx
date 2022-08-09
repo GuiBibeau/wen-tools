@@ -1,6 +1,6 @@
 import React from "react";
 import { LoadingPill, NotConnectedPill, ConnectedPill } from "../Pills";
-import { useWen, disconnect } from "@wen/actions";
+import { useWen, disconnect } from "@wen-tools/actions";
 import { getShortenedAddress } from "../../helpers";
 import { useTheme } from "../ButtonProvider";
 

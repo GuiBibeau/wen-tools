@@ -4,18 +4,18 @@
 
 Straight forward, batteries includes utilities to build dapps.
 
-_For turnkey connect component see: [Wen React](/packages/@wen/react)_
+_For turnkey connect component see: [Wen React](/packages/@wen-tools/react)_
 
 ## Getting started
 
 Wen Actions depends on no other libraries to get started. It can completely be used as a standalone library but it works well with ethers.jsx
 
 ```sh
-npm i @wen/actions
+npm i @wen-tools/actions
 # or
-yarn add @wen/actions
+yarn add @wen-tools/actions
 # or
-pnpm i @wen/actions
+pnpm i @wen-tools/actions
 ```
 
 ## Interacting with a user's wallet
@@ -23,7 +23,7 @@ pnpm i @wen/actions
 All functions are asynchronous.
 
 ```jsx
-import { connectWallet, changeChain } from "@wen/actions";
+import { connectWallet, changeChain } from "@wen-tools/actions";
 
 // request a connection
 connectWallet();
@@ -40,7 +40,7 @@ Wen Actions support both vanilla js and react.
 A readonly proxy object is exposed to work.
 
 ```ts
-import { state } from "@wen/actions";
+import { state } from "@wen-tools/actions";
 
 // state is an instance of State
 type State = {
@@ -59,7 +59,7 @@ type State = {
 For reactive updates use the React hook. It exposes the same state as the vanilla js/ts proxy object.
 
 ```tsx
-import { useWen } from "@wen/react";
+import { useWen } from "@wen-tools/react";
 
 export default function Home() {
   // anytime the state is waiting on an updte from metamask, requesting is true

@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 
-import { ConnectButton } from "@wen/react";
+import { ConnectButton } from "@wen-tools/react";
 
 const Home: NextPage = () => {
   return (
@@ -13,8 +13,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <ConnectButton theme="w3fs" />
-        {/* <ConnectButton theme="base" /> */}
+        <ConnectButton theme="w3fs" chainId={5} />
       </main>
     </div>
   );

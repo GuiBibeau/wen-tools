@@ -1,6 +1,6 @@
 import { Dialog } from "@headlessui/react";
 import React from "react";
-import { changeChain } from "@wen/actions";
+import { changeChain } from "@wen-tools/actions";
 
 import { close } from "../../state";
 import {
@@ -25,7 +25,7 @@ export const ChangeNetwork = () => {
 				<div className="mt-2">
 					<p className={`mb-4 ${text}`}>
 						Please connect to the
-						<span className="capitalize">{`${desiredChainDisplayName} `}</span>
+						<span className="capitalize">{` ${desiredChainDisplayName} `}</span>
 						network to use this app.
 					</p>
 					<button type="button" className={button} onClick={handleClick}>

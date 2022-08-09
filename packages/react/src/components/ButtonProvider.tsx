@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Button } from "./Button";
-import { listen, stopListening } from "@wen/actions";
+import { listen, stopListening } from "@wen-tools/actions";
 import { detectMetamask, parseChainId, parseChainName } from "../helpers";
 import Modal from "./Modal/Container";
 import { Theme, themeMap } from "./theme";

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { getShortenedAddress } from "../helpers";
 import { open } from "../state";
 
-import { useWen } from "@wen/actions";
+import { useWen } from "@wen-tools/actions";
 
 import "../style.css";
 import { useDesiredChainId, useTheme } from "./ButtonProvider";

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { connectWallet } from "@wen/actions";
+import { connectWallet } from "@wen-tools/actions";
 import { detectMetamask } from "../../helpers";
 
 import { close } from "../../state";
