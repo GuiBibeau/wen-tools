@@ -1,6 +1,6 @@
 {
   "name": "@wen-tools/react",
-  "version": "1.1.0",
+  "version": "0.0.1",
   "description": "A react compoenent to connect to metamask",
   "module": "dist/esm/index.js",
   "types": "dist/esm/types/src/index.d.ts",

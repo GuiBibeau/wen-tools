@@ -97,7 +97,8 @@ importers:
       '@types/node': 18.0.6
       '@types/react': 18.0.15
       '@types/react-dom': ^18.0.6
-      '@wen-tools/react': workspace:1.10.0-beta.4
+      '@wen-tools/actions': 1.1.0
+      '@wen-tools/react': 1.1.0
       eslint: 8.20.0
       eslint-config-next: 12.2.2
       next: 12.2.2
@@ -105,7 +106,8 @@ importers:
       react-dom: ^18.2.0
       typescript: 4.7.4
     dependencies:
-      '@wen-tools/react': link:../react
+      '@wen-tools/actions': 1.1.0_biqbaboplfbrettd7655fr4n2y
+      '@wen-tools/react': 1.1.0_biqbaboplfbrettd7655fr4n2y
       next: 12.2.2_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -1195,12 +1197,49 @@ packages:
       sirv: 2.0.2
     dev: true
 
+  /@wen-tools/actions/1.1.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-WOwyO8eaWPGa/cDoqyq+J4XaMCou+x4aJ4ivD9bct9FIP3nrWc2X/keqbn7+1zcF9XmzQ6UbBTrmPthGJNbF5g==}
+    peerDependencies:
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      valtio: 1.6.3_react@18.2.0
+    transitivePeerDependencies:
+      - '@babel/helper-module-imports'
+      - '@babel/types'
+      - aslemammad-vite-plugin-macro
+      - babel-plugin-macros
+      - vite
+    dev: false
+
   /@wen-tools/actions/1.10.0-beta.2_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-xv0k/yslxZ8y/baD7eDv4sU96RBy8roe51mVEML2sRGyJQZ5qxd28cw2U6HxqObaRdjwTfxwgJLhpgcrf7WBLg==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      valtio: 1.6.3_react@18.2.0
+    transitivePeerDependencies:
+      - '@babel/helper-module-imports'
+      - '@babel/types'
+      - aslemammad-vite-plugin-macro
+      - babel-plugin-macros
+      - vite
+    dev: false
+
+  /@wen-tools/react/1.1.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-LvJtzn2nyrRn5oXKcV5TG/rkzR1HkdyVn8PcdXI8nmn1lkwiPqEShm0bJoZ/vgZjI+6842iQnc9JexwWWnElcw==}
+    peerDependencies:
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      '@headlessui/react': 1.6.6_biqbaboplfbrettd7655fr4n2y
+      '@heroicons/react': 1.0.6_react@18.2.0
+      '@wen-tools/actions': 1.10.0-beta.2_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       valtio: 1.6.3_react@18.2.0
