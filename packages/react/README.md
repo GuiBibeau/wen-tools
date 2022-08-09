@@ -32,9 +32,9 @@ export default function Home() {
 }
 ```
 
-## Specify the network to use
+## Specify the network
 
-All chains are supported, you only need to pass in the chain id (find them [here](https://chainlist.org/)).
+pass the network to the component. Both number and hexstring are supported.
 
 ```jsx
 import { ConnectButton } from "@wen-tools/react";
@@ -42,7 +42,45 @@ import { ConnectButton } from "@wen-tools/react";
 export default function Home() {
   return (
     <div>
-      <ConnectButton chainId="4" chainDisplayName="Rinkeby" />
+      <ConnectButton chainId="4" />
+    </div>
+  );
+}
+```
+
+## Custom network
+
+If your chain is not automatically detected, you can decided to pass your own network and the chainDisplayName
+
+```jsx
+import { ConnectButton } from "@wen-tools/react";
+
+export default function Home() {
+  return (
+    <div>
+      <ConnectButton chainId={87765} chainDisplayName="My awesome network" />
+    </div>
+  );
+}
+```
+
+## Theming
+
+pass the theme prop with any of these options
+
+- base,
+- dark
+- midnight,
+- elegant
+- w3fs
+
+```jsx
+import { ConnectButton } from "@wen-tools/react";
+
+export default function Home() {
+  return (
+    <div>
+      <ConnectButton theme="dark" />
     </div>
   );
 }
