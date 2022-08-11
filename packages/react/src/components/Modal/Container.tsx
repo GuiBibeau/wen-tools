@@ -12,7 +12,7 @@ export const Modal = (): JSX.Element => {
 
 	return (
 		<Transition.Root show={open} as={Fragment} appear={true}>
-			<Dialog as="div" className="relative z-10" onClose={close}>
+			<Dialog as="div" className="relative z-50" onClose={close}>
 				<Transition.Child
 					as={Fragment}
 					enter="ease-out duration-300"

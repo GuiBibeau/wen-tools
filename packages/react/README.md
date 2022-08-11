@@ -9,11 +9,11 @@ React component to connect your users quickly
 Wen React is a component that allows you to connect to wallets in 1 line of code in any React 18 app.
 
 ```sh
-npm i @wen/actions @wen/react
+npm i @wen-tools/actions @wen-tools/react
 # or
-yarn add @wen/actions @wen/react
+yarn add @wen-tools/actions @wen-tools/react
 # or
-pnpm i @wen/actions @wen/react
+pnpm i @wen-tools/actions @wen-tools/react
 ```
 
 ## Connect users
@@ -21,7 +21,7 @@ pnpm i @wen/actions @wen/react
 Just render the kit component. It includes everything to connect to a wallet and right network.
 
 ```jsx
-import { ConnectButton } from "@wen/react";
+import { ConnectButton } from "@wen-tools/react";
 
 export default function Home() {
   return (
@@ -32,17 +32,55 @@ export default function Home() {
 }
 ```
 
-## Specify the network to use
+## Specify the network
 
-All chains are supported, you only need to pass in the chain id (find them [here](https://chainlist.org/)).
+pass the network to the component. Both number and hexstring are supported.
 
 ```jsx
-import { ConnectButton } from "@wen/react";
+import { ConnectButton } from "@wen-tools/react";
 
 export default function Home() {
   return (
     <div>
-      <ConnectButton chainId="4" chainDisplayName="Rinkeby" />
+      <ConnectButton chainId="4" />
+    </div>
+  );
+}
+```
+
+## Custom network
+
+If your chain is not automatically detected, you can decided to pass your own network and the chainDisplayName
+
+```jsx
+import { ConnectButton } from "@wen-tools/react";
+
+export default function Home() {
+  return (
+    <div>
+      <ConnectButton chainId={87765} chainDisplayName="My awesome network" />
+    </div>
+  );
+}
+```
+
+## Theming
+
+pass the theme prop with any of these options
+
+- base,
+- dark
+- midnight,
+- elegant
+- w3fs
+
+```jsx
+import { ConnectButton } from "@wen-tools/react";
+
+export default function Home() {
+  return (
+    <div>
+      <ConnectButton theme="dark" />
     </div>
   );
 }
@@ -50,4 +88,4 @@ export default function Home() {
 
 ## Reading wallet data
 
-[@wen/actions](/packages/@wen/actions)
+[@wen-tools/actions](/packages/@wen-tools/actions)
